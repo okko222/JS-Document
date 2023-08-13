@@ -21,3 +21,47 @@ The navigator object provides background information about the browser and the o
   </ol>
 </li>
 </ul>
+-every HTML tag is an object <code>document.body</code> is the object representing the body tag.
+/!\ An interesting "special case" is tables.By DOM specification they must have <code>tbody</code> tag, but html text may omit it.Then the browser creates <tbody> in the DOM automatically.
+-There are other node types besides elements and text nodes for example comments :
+    comments #comment why is a comment added to the DOM?it doesn't affect the visual representation in any way. But there’s a rule – if something’s in HTML, then it also must be in the DOM tree.
+-the <!DOCTYPE...> directive at the very beginning of HTML is also a DOM node. It’s in the DOM tree right before <html>. Few people know about that. We are not going to touch that node, we even don’t draw it on diagrams, but it’s there. 
+-The document object that represents the whole document is, formally, a DOM node as well.
+-There are 12 node types. In practice we usually work with 4 of them:
+<ol>
+  <li>document - the "entry point" into DOM.</li>
+  <li>element nodes - HTML-tags, the tree building blocks</li>
+  <li>text nodes - contain text.</li>
+  <li>comments - sometimes we can put information there, it won't be shown,but JS can read it from the DOM</li>
+</ol>
+-Chrome Developer Tools at https://developers.google.com/web/tools/chrome-devtools.
+-DOM nodes have <i>properties</i> and <i>methods</i> that allow us to travel between them, modify them, move around the page, and more. 
+<h1>Walking the DOM</h1>
+-The DOM allows us to do anything with elements and their contents, but first we need to reach the corresponding DOM object.All operations on the DOM start with the document object. That’s the main “entry point” to DOM. From it we can access any node.
+![DOM](https://github.com/okko222/JS-Document/assets/107776003/30122955-38e8-4a67-aaa4-cdd0a976801f)
+The topmost tree nodes are available directly as document properties:
+<ol>
+  <li><html> = document.documentElement
+   The topmost document node is document.documentElement. That’s the DOM node of the <html> tag.</li>
+  <li><body> = document.body</li>
+  <li><head> = document.head</li>
+</ol>
+-In the DOM world null means "doesn't exist" or no such node.
+<h4>Children: childNodes, firstChild, lastChild</h4>
+There are two terms that we'll use from now : 
+<ul>
+  <li>Child nodes (or children) – elements that are direct children. In other words, they are nested exactly in the given one. For instance, <head> and <body> are children of <html> element.</li>
+    <li>Descendants – all elements that are nested in the given one, including children, their children and so on.</li>
+</ul>
+<b>The childNodes collection lists all child nodes,including text nodes.</b>
+-index1.html shows children of document.body:
+
+
+
+
+
+
+
+
+
+
