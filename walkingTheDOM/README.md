@@ -133,3 +133,4 @@ checks if elem matches the given CSS-selector. It returns true or false. <code>e
 </code>
 <h5>getElementsByTagName(tagName)</h5>
 -return one or collections of the corespoding tags
+<h5>Live collections</h5>
