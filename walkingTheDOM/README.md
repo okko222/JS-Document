@@ -14,6 +14,10 @@ The document object is the main “entry point” to the page. We can change or 
 </li>
 <li><b>BOM:</b> The Browser Object Model (BOM) represents additional objects provided by the browser (host environment) for working with everything except the document.
 For instance:
-The navigator object provides background information about the browser and the operating system. There are many properties, but the two most widely known are: <ol><li>navigator.userAgent – about the current browser, and navigator.platform – about the platform (can help to differentiate between Windows/Linux/Mac etc).<li>
-<li>The location object allows us to read the current URL and can redirect the browser to a new one.</li></ol></li>
+The navigator object provides background information about the browser and the operating system. There are many properties, but the two most widely known are: 
+  <ol>
+<li>navigator.userAgent – about the current browser, and navigator.platform – about the platform (can help to differentiate between Windows/Linux/Mac etc).</li>
+<li>The location object allows us to read the current URL and can redirect the browser to a new one.</li>
+  </ol>
+</li>
 </ul>
