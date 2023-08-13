@@ -55,8 +55,8 @@ There are two terms that we'll use from now :
   <li>Child nodes (or children) – elements that are direct children. In other words, they are nested exactly in the given one. For instance, <head> and <body> are children of <html> element.</li>
     <li>Descendants – all elements that are nested in the given one, including children, their children and so on.</li>
 </ul>
-<b>The childNodes collection lists all child nodes,including text nodes.</b>
--index1.html shows children of document.body:
+<h5>The childNodes collection lists all child nodes,including text nodes.</h5>
+index1.html shows children of document.body
 
 
 
