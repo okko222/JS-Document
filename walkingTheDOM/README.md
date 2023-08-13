@@ -38,13 +38,15 @@ The navigator object provides background information about the browser and the o
 -DOM nodes have <i>properties</i> and <i>methods</i> that allow us to travel between them, modify them, move around the page, and more. 
 <h1>Walking the DOM</h1>
 -The DOM allows us to do anything with elements and their contents, but first we need to reach the corresponding DOM object.All operations on the DOM start with the document object. That’s the main “entry point” to DOM. From it we can access any node.
-![DOM](https://github.com/okko222/JS-Document/assets/107776003/30122955-38e8-4a67-aaa4-cdd0a976801f)
+
+  ![DOM](https://github.com/okko222/JS-Document/assets/107776003/30122955-38e8-4a67-aaa4-cdd0a976801f)
+
 The topmost tree nodes are available directly as document properties:
 <ol>
-  <li><html> = document.documentElement
+  <li> the html = document.documentElement
    The topmost document node is document.documentElement. That’s the DOM node of the <html> tag.</li>
-  <li><body> = document.body</li>
-  <li><head> = document.head</li>
+  <li>the  body = document.body</li>
+  <li>the head = document.head</li>
 </ol>
 -In the DOM world null means "doesn't exist" or no such node.
 <h4>Children: childNodes, firstChild, lastChild</h4>
