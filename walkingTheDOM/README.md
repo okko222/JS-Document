@@ -100,5 +100,36 @@ Certain types of DOM elements may provide additional properties, specific to the
   <li>tr.sectionRowIndex the positioin Index of the given tr inside the enclosing</li>
   <li>tr.rowIndex the number  of the tr in the table as a whole </li>
 </ul>
+<h1>Searching:getElement*, querySelector*</h1>
+<h5>getElementById</h5>
+    -getElementById one element so the id must be unique else the behavior of methods that use it is unpredictable.
+-getElmentById can be called only on document
+<h5>querySelectorAll</h5>
+-<code>elem.querySelectorAll(css)</code> returns all elements inside elem matching the given CSS selector
+-The call to elem.querySelector(css) returns the first element for the given CSS selector.
+<h5>matches</h5>
+checks if elem matches the given CSS-selector. It returns true or false. <code>elem.matches(css)</code>
+<h5>closest</h5>
+-Ancestors of an element are: parent, the parent of parent, its parent and so on
+-The method elem.closest(css) looks for the nearest ancestor that matches the CSS-selector. The elem itself is also included in the search.
+<code>
+  <h1>Contents</h1>
 
+<div class="contents">
+  <ul class="book">
+    <li class="chapter">Chapter 1</li>
+    <li class="chapter">Chapter 2</li>
+  </ul>
+</div>
 
+<script>
+  let chapter = document.querySelector('.chapter'); // LI
+
+  alert(chapter.closest('.book')); // UL
+  alert(chapter.closest('.contents')); // DIV
+
+  alert(chapter.closest('h1')); // null (because h1 is not an ancestor)
+</script>
+</code>
+<h5>getElementsByTagName(tagName)</h5>
+-return one or collections of the corespoding tags
