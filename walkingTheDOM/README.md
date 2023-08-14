@@ -129,7 +129,7 @@ checks if elem matches the given CSS-selector. It returns true or false. <code>e
   alert(chapter.closest('.contents')); // DIV
 
   alert(chapter.closest('h1')); // null (because h1 is not an ancestor)
-</script>
+</script> 
 </code>
 <h5>getElementsByTagName(tagName)</h5>
 -return one or collections of the corespoding tags
