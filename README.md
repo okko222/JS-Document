@@ -1,1 +1,1 @@
-General readme.md
+<b>taking notes from</b> https://javascript.info/
