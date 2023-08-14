@@ -113,7 +113,7 @@ checks if elem matches the given CSS-selector. It returns true or false. <code>e
 -Ancestors of an element are: parent, the parent of parent, its parent and so on
 -The method elem.closest(css) looks for the nearest ancestor that matches the CSS-selector. The elem itself is also included in the search.
 <code>
-  <!---<h1>Contents</h1>
+  [comment]: <>(<h1>Contents</h1>
  
 <div class="contents">
   <ul class="book">
@@ -121,7 +121,7 @@ checks if elem matches the given CSS-selector. It returns true or false. <code>e
     <li class="chapter">Chapter 2</li>
   </ul>
 </div>
--->
+)
 <script>
   let chapter = document.querySelector('.chapter'); // LI
 
