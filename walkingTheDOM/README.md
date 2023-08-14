@@ -219,4 +219,15 @@ So when an element has id or another standard attribute, the corresponding prope
 <h5>Non-standard attributes,dataset</h5>
 Sometimes non-standard attributes are used to pass custom data from HTML to JavaScript, or to “mark” HTML-elements for JavaScript.
 -Why we should use non-standard attributes the reasons described in index2.html
+-why would using an attribute be preferable to having classes .order-state-new .order-state-pending .order-state-canceled (index2.html) ? 
+Because an attribute is more convenient to manage. The state can be changed as easy as:
 
+<pre><code>// a bit simpler than removing old/adding a new class
+div.setAttribute('order-state', 'canceled');</code></pre>
+-But there may be a possible problem with custom attributes. What if we use a non-standard attribute for our purposes and later the standard introduces it and makes it do something? The HTML language is alive, it grows, and more attributes appear to suit the needs of developers. There may be unexpected effects in such case.
+To avoid conflicts, there exist data-* attributes.
+<h5>data-*</h5>
+<b>All attributes starting with “data-” are reserved for programmers’ use. They are available in the dataset property.</b>
+-for instance if an elem has an attribute named "data-about",it's available as elem.dataset.about.
+-Multiword attributes like <code>data-order-state</code> become camel-cased: 
+<code>dataset.orderState</code>
