@@ -177,3 +177,11 @@ In XML mode the case is kept “as is”. Nowadays XML mode is rarely used.
 <h5>outerHTML:full HTML of the element</h5> 
   index3.html
 <b>Beware: unlike innerHTML, writing to outerHTML does not change the element. Instead, it replaces it in the DOM.</b>
+<h5>nodeValue/data:text node content</h5>
+-The innerHTML property is only valid for element nodes.Other node types, such as text nodes, have their counterpart: nodeValue and data properties.We'll use data because it's shorter.
+<h5>textContent:pure text</h5>
+The textContent provides access to the text inside the element: only text, minus all <tags>.
+-Whey textContent <ul>
+<li>With innerHTML we'll have it inserted as html with all tags</li>
+<li>With textContent we'll have it inserted as text,all symbols are treated literally. 
+**In most cases, we expect the text from a user, and want to treat it as text. We don’t want unexpected HTML in our site. An assignment to textContent does exactly that.**
