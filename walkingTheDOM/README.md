@@ -218,3 +218,25 @@ So when an element has id or another standard attribute, the corresponding prope
 -But the property change does not affect the attribute.
 <h5>Non-standard attributes,dataset</h5>
 Sometimes non-standard attributes are used to pass custom data from HTML to JavaScript, or to “mark” HTML-elements for JavaScript.
+<pre>
+  <code>
+    <!-- mark the div to show "name" here -->
+<div show-info="name"></div>
+<!-- and age here -->
+<div show-info="age"></div>
+
+<script>
+  // the code finds an element with the mark and shows what's requested
+  let user = {
+    name: "Pete",
+    age: 25
+  };
+
+  for(let div of document.querySelectorAll('[show-info]')) {
+    // insert the corresponding info into the field
+    let field = div.getAttribute('show-info');
+    div.innerHTML = user[field]; // first Pete into "name", then 25 into "age"
+  }
+</script>
+  </code>
+</pre>
