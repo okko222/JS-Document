@@ -112,6 +112,68 @@ checks if elem matches the given CSS-selector. It returns true or false. <code>e
 <h5>closest</h5>
 -Ancestors of an element are: parent, the parent of parent, its parent and so on
 -The method elem.closest(css) looks for the nearest ancestor that matches the CSS-selector. The elem itself is also included in the search.index2.html
-<h5>getElementsByTagName(tagName)</h5>
+<h5>getElementsByTagName(tagName),elem.getElementsByClassName(className),document.getElementsByName(name)</h5>
 -return one or collections of the corespoding tags
 <h5>Live collections</h5>
+-All methods "getElementsBy*" return a live collection.
+-In constrast, querySelectorAll returns a static collection.It's like a fixed array of elems.
+-elemA.contains(elemB) returns true if elemB is inside elemA or when elemA === elemB.
+<h1>DOM node classes</h1>
+![DOMNodeClasses](https://github.com/okko222/JS-Document/assets/107776003/a38c91d5-d0e2-4fcd-b20b-11aa84bae48a)
+
+<ul>
+  The classes are:
+
+<li>EventTarget – is the root “abstract” class for everything.
+
+Objects of that class are never created. It serves as a base, so that all DOM nodes support so-called “events”, we’ll study them later.</li>
+
+<li>Node – is also an “abstract” class, serving as a base for DOM nodes.
+
+It provides the core tree functionality: parentNode, nextSibling, childNodes and so on (they are getters). Objects of Node class are never created. But there are other classes that inherit from it (and so inherit the Node functionality).</li>
+
+<li>Document, for historical reasons often inherited by HTMLDocument (though the latest spec doesn’t dictate it) – is a document as a whole.
+
+The document global object belongs exactly to this class. It serves as an entry point to the DOM.</li>
+
+<li>CharacterData – an “abstract” class, inherited by:
+
+-Text – the class corresponding to a text inside elements, e.g. Hello in <p>Hello</p>.
+-Comment – the class for comments. They are not shown, but each comment becomes a member of DOM.
+</li>
+<li>Element – is the base class for DOM elements.
+
+It provides element-level navigation like nextElementSibling, children and searching methods like getElementsByTagName, querySelector.
+
+A browser supports not only HTML, but also XML and SVG. So the Element class serves as a base for more specific classes: SVGElement, XMLElement (we don’t need them here) and HTMLElement.
+</li>
+<li>Finally, HTMLElement is the basic class for all HTML elements. We’ll work with it most of the time.
+
+It is inherited by concrete HTML elements:
+
+-HTMLInputElement – the class for <input> elements,
+-HTMLBodyElement – the class for <body> elements,
+-HTMLAnchorElement – the class for <a> elements,
+-…and so on.
+</li>
+</ul>
+<h5>nodeType property</h5>
+<ol>
+  <li>elem.nodeType == 1 for element nodes</li>
+  <li>elem.nodeType == 2 for text nodes</li>
+  <li>elem.nodeType == 9 for the document object</li>
+</ol>
+<h5>nodeName and tagName</h5>
+alert(document.body.nodeName); // BODY
+alert(document.body.tagName); // BODY
+What is the difference between them? 
+tagName is only supported by element nodes (as it originates from Element class), while nodeName can say something about other node types.
+-if we only deal with elements then we can use both tagName and nodeName.
+-The browser has two modes of processing documents: HTML and XML In HTML mode tagName/nodeName is always uppercased: it’s BODY either for <body> or <BoDy>.
+In XML mode the case is kept “as is”. Nowadays XML mode is rarely used.
+<h5>innerHTML:the content</h5>
+-If innerHTML inserts a <script> tag into the document – it becomes a part of HTML, but doesn’t execute. 
+-innerHTML+= does a full overwrite
+<h5>outerHTML:full HTML of the element</h5> 
+  index3.html
+<b>Beware: unlike innerHTML, writing to outerHTML does not change the element. Instead, it replaces it in the DOM.</b>
