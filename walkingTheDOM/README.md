@@ -114,14 +114,14 @@ checks if elem matches the given CSS-selector. It returns true or false. <code>e
 -The method elem.closest(css) looks for the nearest ancestor that matches the CSS-selector. The elem itself is also included in the search.
 <code>
   <h1>Contents</h1>
-
+<!---
 <div class="contents">
   <ul class="book">
     <li class="chapter">Chapter 1</li>
     <li class="chapter">Chapter 2</li>
   </ul>
 </div>
-
+-->
 <script>
   let chapter = document.querySelector('.chapter'); // LI
 
