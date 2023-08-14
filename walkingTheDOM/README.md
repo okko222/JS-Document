@@ -121,7 +121,8 @@ checks if elem matches the given CSS-selector. It returns true or false. <code>e
 -In constrast, querySelectorAll returns a static collection.It's like a fixed array of elems.
 -elemA.contains(elemB) returns true if elemB is inside elemA or when elemA === elemB.
 <h1>DOM node classes</h1>
-![DOMNodeClasses](https://github.com/okko222/JS-Document/assets/107776003/a38c91d5-d0e2-4fcd-b20b-11aa84bae48a)
+
+![DOMNodeClasses](https://github.com/okko222/JS-Document/assets/107776003/8b3bc7e6-0a06-4240-979f-9a75efcc98a1)
 
 <ul>
   The classes are:
