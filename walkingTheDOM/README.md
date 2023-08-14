@@ -111,28 +111,7 @@ Certain types of DOM elements may provide additional properties, specific to the
 checks if elem matches the given CSS-selector. It returns true or false. <code>elem.matches(css)</code>
 <h5>closest</h5>
 -Ancestors of an element are: parent, the parent of parent, its parent and so on
--The method elem.closest(css) looks for the nearest ancestor that matches the CSS-selector. The elem itself is also included in the search.
-<pre> 
-    <code>
- <h1>Contents</h1>
- 
-<div class="contents">
-  <ul class="book">
-    <li class="chapter">Chapter 1</li>
-    <li class="chapter">Chapter 2</li>
-  </ul>
-</div>
-
-<script>
-  let chapter = document.querySelector('.chapter'); // LI
-
-  alert(chapter.closest('.book')); // UL
-  alert(chapter.closest('.contents')); // DIV
-
-  alert(chapter.closest('h1')); // null (because h1 is not an ancestor)
-</script> 
-</code>
-</pre>
+-The method elem.closest(css) looks for the nearest ancestor that matches the CSS-selector. The elem itself is also included in the search.index2.html
 <h5>getElementsByTagName(tagName)</h5>
 -return one or collections of the corespoding tags
 <h5>Live collections</h5>
