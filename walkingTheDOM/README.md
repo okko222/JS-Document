@@ -1,5 +1,7 @@
 <b>Here’s a bird’s-eye view of what we have when JavaScript runs in a web browser</b>
+
 ![window](https://github.com/okko222/JS-Document/assets/107776003/a9dc0540-b09b-4644-8253-29e7506a5cbc)
+
 <ul>
   <li><b>window:</b> it is a global object for JavaScript code
     <code>
@@ -119,7 +121,8 @@ checks if elem matches the given CSS-selector. It returns true or false. <code>e
 -In constrast, querySelectorAll returns a static collection.It's like a fixed array of elems.
 -elemA.contains(elemB) returns true if elemB is inside elemA or when elemA === elemB.
 <h1>DOM node classes</h1>
-![DOMNodeClasses](https://github.com/okko222/JS-Document/assets/107776003/a38c91d5-d0e2-4fcd-b20b-11aa84bae48a)
+
+![DOMNodeClasses](https://github.com/okko222/JS-Document/assets/107776003/8b3bc7e6-0a06-4240-979f-9a75efcc98a1)
 
 <ul>
   The classes are:
@@ -177,3 +180,43 @@ In XML mode the case is kept “as is”. Nowadays XML mode is rarely used.
 <h5>outerHTML:full HTML of the element</h5> 
   index3.html
 <b>Beware: unlike innerHTML, writing to outerHTML does not change the element. Instead, it replaces it in the DOM.</b>
+<h5>nodeValue/data:text node content</h5>
+-The innerHTML property is only valid for element nodes.Other node types, such as text nodes, have their counterpart: nodeValue and data properties.We'll use data because it's shorter.
+<h5>textContent:pure text</h5>
+The textContent provides access to the text inside the element: only text, minus all <tags>.
+-Whey textContent <ul>
+<li>With innerHTML we'll have it inserted as html with all tags</li>
+<li>With textContent we'll have it inserted as text,all symbols are treated literally. 
+**In most cases, we expect the text from a user, and want to treat it as text. We don’t want unexpected HTML in our site. An assignment to textContent does exactly that.**
+<h1>Attributes and properties</h1>
+ For element nodes, most standard HTML attributes automatically become properties of DOM objects.For instance, if the tag is <body id="page">, then the DOM object has body.id="page".
+ -When they are the same, and when they are different?
+ <h5>DOM properties</h5> 
+ DOM nodes are regular JavaScript objects. We can alter them.
+For instance, let’s create a new property in document.body:
+<pre><code>document.body.myData={
+name:"Caesar",
+title:"imperator"}; 
+alert(document.body.myData.title);//Imperator;</code></pre> 
+-we can a method as well.
+<h5>HTML attributes</h5> 
+-In HTML, tags may have attributes. When the browser parses the HTML to create DOM objects for tags, it recognizes standard attributes and creates DOM properties from them.
+
+So when an element has id or another standard attribute, the corresponding property gets created. But that doesn’t happen if the attribute is non-standard.
+-How to access Non-standard attributes ? <ul><li><code>elem.hasAttribute(name)</code> checks for existence</li>
+<li><code>elem.getAttribute(name)</code> get the value</li>
+<li><code>elem.setAttribute(name,value) </code>sets the value</li>
+<li>elem.removeAttribute(name) removes the attribute</li>
+</ul>
+-We can read all attributes with <code>elem.attributes</code>
+-HTML attributes have the following features: 
+1-Their name is case-insensitive (id is like ID)
+2-Their values are always strings
+-In elem.attributes we can access attr.name and attr.value
+-When a standard attribute changes, the corresponding property is auto-updated, and vice versa excepte input.value synchronizes only from attribute → property, but not back.
+-Changing the attribute value updates the property.
+-But the property change does not affect the attribute.
+<h5>Non-standard attributes,dataset</h5>
+Sometimes non-standard attributes are used to pass custom data from HTML to JavaScript, or to “mark” HTML-elements for JavaScript.
+-Why we should use non-standard attributes the reasons described in index3.html
+
