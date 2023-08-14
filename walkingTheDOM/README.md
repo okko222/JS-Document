@@ -218,5 +218,5 @@ So when an element has id or another standard attribute, the corresponding prope
 -But the property change does not affect the attribute.
 <h5>Non-standard attributes,dataset</h5>
 Sometimes non-standard attributes are used to pass custom data from HTML to JavaScript, or to “mark” HTML-elements for JavaScript.
--Why we should use non-standard attributes the reasons described in index3.html
+-Why we should use non-standard attributes the reasons described in index2.html
 
