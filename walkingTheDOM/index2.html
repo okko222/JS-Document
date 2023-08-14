@@ -1,4 +1,4 @@
- <h1Contents</h1>
+ <!-- <h1Contents</h1>
  
 <div class="contents">
   <ul class="book">
@@ -16,4 +16,45 @@
   alert(chapter.closest('h1')); // null (because h1 is not an ancestor)
 </script>  
 end
-end
+end -->
+<!-- non-standard attributes first case -->
+<!-- <div show-info="name"></div>
+<div show-info="age"></div>
+
+<script>
+  let user ={
+    name:"Souhail",
+    age: 23
+  }
+  for(let div of document.querySelectorAll("[show-info]")){
+    console.log(div)
+    let field = div.getAttribute('show-info') //string; 
+    div.innerHTML =user[field]
+  }
+</script> -->
+<!-- used to style an element second case  -->
+<style>
+  /* styles rely on the custom attribute "order-state" */
+  .order[order-state="new"] {
+    color: green;
+  }
+
+  .order[order-state="pending"] {
+    color: blue;
+  }
+
+  .order[order-state="canceled"] {
+    color: red;
+  }
+</style>
+<div class="order" order-state="new">
+  A new order.
+</div>
+
+<div class="order" order-state="pending">
+  A pending order.
+</div>
+
+<div class="order" order-state="canceled">
+  A canceled order.
+</div>
