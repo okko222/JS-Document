@@ -1,0 +1,33 @@
+<!-- task 1 : Write the code to select the element with data-widget-name attribute from the document and to read its value.-->
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+  <div data-widget-name="menu">Choose the genre</div>
+
+  <script>
+    /*  3 methods */ 
+    //alert(document.body.children[0].dataset.widgetName)
+     let elem = document.querySelectorAll('[data-widget-name]')
+    // alert(elem[0].dataset.widgetName)
+    alert(elem[0].getAttribute("data-widget-name"))
+  </script>
+</body>
+</html> -->
+<!-- task 2 : make external links orange http://internal...is not external and all 
+other links containing :// are external  -->
+<a name="list">the list</a>
+<ul>
+  <li><a href="http://google.com">http://google.com</a></li>
+  <li><a href="/tutorial">/tutorial.html</a></li>
+  <li><a href="local/path">local/path</a></li>
+  <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+  <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+  <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+</ul>
+
+<script>
+  // setting style for a single link
+  let link = document.querySelector('a');
+  link.style.color = 'orange';
+</script>
