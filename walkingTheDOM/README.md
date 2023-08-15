@@ -274,4 +274,38 @@ html: is an HTML string
   <h5>Cloning nodes:cloneNode</h5>
   <code>elem.cloneNode(true) </code>creates a "deep" clone of the element -attributes and subelements and subelements.
   <code>elem.cloneNode(falase)</code> the clone is without child elements
-  <h5>DocumentFragement</h5>
+<h5>DocumentFragement</h5>
+-DocumentFragment is a special DOM node that serves as a wrapper to pass around lists of nodes.
+<pre><code>
+  <ul id="ul"></ul>
+
+<script>
+function getListContent() {
+  let fragment = new DocumentFragment();
+
+  for(let i=1; i<=3; i++) {
+    let li = document.createElement('li');
+    li.append(i);
+    fragment.append(li);
+  }
+
+  return fragment;
+}
+
+ul.append(getListContent()); // (*)
+</script>
+</code></pre>
+/!\<b> We'll need DocumentFragement when well cove template element</b>
+<h5>A word about "document.write"</h5>
+-Is a very ancient method to add something to a web page! 
+-comes from times there was no DOM,no standard... it still lives bcz there are scripts using it.
+<b>The call to document.write only works while the page is loading</b>
+<pre><code><p>After one second the contents of this page will be replaced...</p>
+<script>
+  // document.write after 1 second
+  // that's after the page loaded, so it erases the existing content
+  setTimeout(() => document.write('<b>...By this.</b>'), 1000);
+</script></code></pre>
+-There is an upside also Technically, when document.write is called while the browser is reading (“parsing”) incoming HTML, and it writes something, the browser consumes it just as if it were initially there, in the HTML text.
+So it works blazingly fast, because there’s no DOM modification involved. It writes directly into the page text, while the DOM is not yet built.
+So if we need to add a lot of text into HTML dynamically, and we’re at page loading phase, and the speed matters, it may help. But in practice these requirements rarely come together. And usually we can see this method in scripts just because they are old.
