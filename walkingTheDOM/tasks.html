@@ -28,6 +28,19 @@ other links containing :// are external  -->
 
 <script>
   // setting style for a single link
-  let link = document.querySelector('a');
-  link.style.color = 'orange';
-</script>
+    let links = document.querySelectorAll('a');
+    //the link should be orange if it contains :// without internal after
+    let href = document.querySelectorAll("href");
+    for (let link of links) {
+        if (link.getAttribute("href")?.includes("://") && !link.getAttribute("href")?.includes("://internal")) {
+          link.style.color = "green"; link.style.backgroundColor = "black"
+        }
+      }
+  </script>
+<!--  another solution : 
+// look for all links that have :// in href
+// but href doesn't start with http://internal.com
+let selector = 'a[href*="://"]:not([href^="http://internal.com"])';
+let links = document.querySelectorAll(selector);
+
+links.forEach(link => link.style.color = 'orange'); -->
