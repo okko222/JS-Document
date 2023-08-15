@@ -231,3 +231,47 @@ To avoid conflicts, there exist data-* attributes.
 -for instance if an elem has an attribute named "data-about",it's available as elem.dataset.about.
 -Multiword attributes like <code>data-order-state</code> become camel-cased: 
 <code>dataset.orderState</code>
+<h1>Modifying the document</h1>
+<h5>Creating an element</h5>
+<code>document.createElement(tag) tag it can be "div" "p" and so on. </code>
+<code>document.createTextNode(text)</code>
+-the three steps to create an element in html page : 
+<ol>
+  <li>create div element <code>let div = document.createElement("div")</code></li>
+  <li>set its class according to the needs <code>div.className="alert"</code></li>
+  <li>fill it with the content <code>div.innerHTML="content"</code></li>
+</ol>
+We’ve created the element. But as of now it’s only in a variable named div, not in the page yet. So we can’t see it.
+<h5>Insertion methods</h5>
+how to make the div show up?
+-we can use append on document.body or on any other element.
+insertion methods they specify different places where to append: 
+<ul>
+<li><code>node.append(...nodes or strings)</code> append nodes or strings at the end of node,
+</li>
+  <li><code>node.prepend(...nodes or strings)</code>– insert nodes or strings at the beginning of node,</li>
+  <li><code>node.before(...nodes or strings)</code> –- insert nodes or strings before node,</li>
+<li><code>node.after(...nodes or strings)</code> –- insert nodes or strings after node</li>
+<li><code>node.replaceWith(...nodes or strings)</code> –- replaces node with the given nodes or strings.</li>
+</ol>
+-Strings are inserted in a safe way like elem.textContent doest it.
+What if we’d like to insert an HTML string “as html”, with all tags and stuff working, in the same manner as elem.innerHTML does it?
+<h5>insertAdjacentHTML/Text/Element</h5>
+<code>elem.insertAdjacentHTML(where,html)</code>
+where : a string parameter
+<ul>
+  <li>"beforebegin" – insert html immediately before elem,</li>
+  <li>"afterbegin" – insert html into elem, at the beginning,</li>
+  <li>"beforeend" – insert html into elem, at the end,</li>
+  <li>"afterend" – insert html immediately after elem.</li>
+</ul>
+html: is an HTML string 
+<code>elem.insertAdjacentText(where,text)</code> text is inserted as text instead of HTML 
+<code>elem.insertAdjacentElement(where,elem)</code> insert element.
+-They exist mainly to make the syntax “uniform”. In practice, only insertAdjacentHTML is used most of the time. Because for elements and text, we have methods append/prepend/before/after – they are shorter to write and can insert nodes/text pieces.
+<h5>Node removal</h5>
+-In order to remove an element or text we use elem.remove();
+  <h5>Cloning nodes:cloneNode</h5>
+  <code>elem.cloneNode(true) </code>creates a "deep" clone of the element -attributes and subelements and subelements.
+  <code>elem.cloneNode(falase)</code> the clone is without child elements
+  <h5>DocumentFragement</h5>
