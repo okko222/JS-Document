@@ -1,9 +1,20 @@
-<div id="div">Button</div>
+<!-- <div id="div">Button</div>
 
 <script>
+    //we can add flags !important 
     div.style.cssText=`color:red !important; 
     background-color:yellow;
     width:100px; 
     text-align:center;`
     alert(div.style.cssText)
+</script> -->
+<!-- :visisted link with getComputedStyle -->
+
+<a id="a" href="https://google.com">google.com</a><br>
+<a href="https://youtube.com">youtube.com</a><br>
+<a href="https://github.com">github.com</a>
+<!-- <style> a:visited{color:red;text-decoration-color:hotpink;}</style> -->
+<script>
+    let style =getComputedStyle(a)
+    console.log(style.textDecorationColor)
 </script>
