@@ -4,10 +4,10 @@
 
 <ul>
   <li><b>window:</b> it is a global object for JavaScript code
-    <code>
+    <pre><code>
         function sayHi() {
         alert("Hello");
-      }// global functions are methods of the global object:window.sayHi(); //it shows Hello</code>
+      }// global functions are methods of the global object:window.sayHi(); //it shows Hello</code></pre>
     -And we can use it as a browser window, to show the window height: 
     <code>alert(window.innerHeight)</code>
   </li>
