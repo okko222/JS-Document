@@ -343,7 +343,5 @@ The result is an object with styles.
 /!\<b>We should always ask for the exact property that we want, like paddingLeft or marginTop or borderTopWidth. Otherwise the correct result is not guaranteed.</b>
 <h4>Styles applied to :visited links are hidden!</h4>
 <b>Visited links may be colored using :visited CSS pseudoclass.
-
 But getComputedStyle does not give access to that color, because otherwise an arbitrary page could find out whether the user visited a link by creating it on the page and checking the styles.
-
 JavaScript may not see the styles applied by :visited. And also, there’s a limitation in CSS that forbids applying geometry-changing styles in :visited. That’s to guarantee that there’s no side way for an evil page to test if a link was visited and hence to break the privacy.</b>
