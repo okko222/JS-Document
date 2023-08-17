@@ -331,17 +331,3 @@ methods of classList:
 </ul>
 <code>classList</code> is iterable so we can use for..of 
 <h5>Resetting the style property</h5>
--In order to remove style.display instead of delete elem.style.display we should assgin an empty string to it elem.style.displaye=""; 
-or we can use this method : <code>document.body.style.removeProperty("background")
-<h5>Full rewrite with style.cssText</h5>
-Normally, we use style.* to assign individual style properties.We can’t set the full style like div.style="color: red; width: 100px", because div.style is an object, and it’s read-only.
-To set the full style as a string, there’s a special property style.cssText:index5.html
-<b>such assignment removes all existing styles</b> it does not add, but replaces them.<b>The same can be accomplished by setting an attribute: <code>div.setAttribute('style', 'color: red...').</code></b>
-<h3>Computed styles:getComputedStyle</h3>
-Modifying a style is easy but hwo to read it?we can't read anything comes from CSS classes using elem.style.<code>getComputedStyle(element,[pseudo])</code> 
-The result is an object with styles.
-/!\<b>We should always ask for the exact property that we want, like paddingLeft or marginTop or borderTopWidth. Otherwise the correct result is not guaranteed.</b>
-<h3>Styles applied to :visited links are hidden!</h3>
-Visited links may be colored using :visited CSS pseudoclass.
-But getComputedStyle does not give access to that color, because otherwise an arbitrary page could find out whether the user visited a link by creating it on the page and checking the styles.
-JavaScript may not see the styles applied by :visited. And also, there’s a limitation in CSS that forbids applying geometry-changing styles in :visited. That’s to guarantee that there’s no side way for an evil page to test if a link was visited and hence to break the privacy.
