@@ -331,3 +331,6 @@ methods of classList:
 </ul>
 <code>classList</code> is iterable so we can use for..of 
 <h5>Resetting the style property</h5>
+-In order to remove style.display instead of delete elem.style.display we should assgin an empty string to it elem.style.displaye=""; 
+or we can use this method : <code>document.body.style.removeProperty("background")
+<h5>Full rewrite with style.cssText</h5>
