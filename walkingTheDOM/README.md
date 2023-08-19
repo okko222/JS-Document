@@ -344,4 +344,7 @@ The result is an object with styles.
 <h5>Styles applied to :visited links are hidden!</h5>
 Visited links may be colored using :visited CSS pseudoclass.But getComputedStyle does not give access to that color, because otherwise an arbitrary page could find out whether the user visited a link by creating it on the page and checking the styles.
 JavaScript may not see the styles applied by :visited. And also, there’s a limitation in CSS that forbids applying geometry-changing styles in :visited. That’s to guarantee that there’s no side way for an evil page to test if a link was visited and hence to break the privacy.
+setTimeout(()=>function(),time) 
+setInterval(()=>function(),time) -> Repetition.
+<h1>Element size and scrolling</h1>
 
