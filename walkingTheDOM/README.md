@@ -348,3 +348,6 @@ setTimeout(()=>function(),time)
 setInterval(()=>function(),time) -> Repetition.
 <h1>Element size and scrolling</h1>
 
+![elementSize](https://github.com/okko222/JS-Document/assets/107776003/f93545e9-3250-45f6-a7aa-8a778fe53c48)
+-the scrollbar size is 16px may vary between devices and browsers
+![geometrieproperties](https://github.com/okko222/JS-Document/assets/107776003/f8d75a8b-96ed-45a3-8e3c-af6fba7ef261)
