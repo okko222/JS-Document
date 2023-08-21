@@ -346,8 +346,3 @@ Visited links may be colored using :visited CSS pseudoclass.But getComputedStyle
 JavaScript may not see the styles applied by :visited. And also, there’s a limitation in CSS that forbids applying geometry-changing styles in :visited. That’s to guarantee that there’s no side way for an evil page to test if a link was visited and hence to break the privacy.
 setTimeout(()=>function(),time) 
 setInterval(()=>function(),time) -> Repetition.
-<h1>Element size and scrolling</h1>
-
-![elementSize](https://github.com/okko222/JS-Document/assets/107776003/f93545e9-3250-45f6-a7aa-8a778fe53c48)
--the scrollbar size is 16px may vary between devices and browsers
-![geometrieproperties](https://github.com/okko222/JS-Document/assets/107776003/f8d75a8b-96ed-45a3-8e3c-af6fba7ef261)
