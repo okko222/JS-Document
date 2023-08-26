@@ -36,3 +36,5 @@ window relative coordinates of the cursor,for pointer events.
 -The event object also available in HTML handler
 <h5>Object handlers:handleEvent</h5>
 We can assign not just a function, but an object as an event handler using addEventListener. When an event occurs, its handleEvent method is called.
+-event handlers are sometimes called event listeners
+❗events are not part of the core js language. they are defined as part of the APIs built into the browser.
